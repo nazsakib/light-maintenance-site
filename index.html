@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Light Maintenance | The Simple, Lightweight WordPress Plugin</title>
+    <meta name="description" content="The fastest WordPress maintenance mode plugin. Zero bloat, SEO friendly 503 status, and instant activation. Download for free today.">
+    <meta name="keywords" content="WordPress maintenance mode, lightweight plugin, fast wordpress plugin, simple maintenance page, WP maintenance free, 503 error wordpress">
+    <meta name="author" content="Sakib Snaz">
+    <link rel="canonical" href="https://yourwebsite.com/">
+
+    <meta property="og:title" content="Light Maintenance - Simple WordPress Plugin">
+    <meta property="og:description" content="The fastest way to put your site under maintenance without bloat.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwebsite.com/">
+    <meta property="og:image" content="https://yourwebsite.com/assets/og-image.jpg">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            600: '#0284c7', // Professional Blue
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        blob: "blob 7s infinite",
+                    },
+                    keyframes: {
+                        blob: {
+                            "0%": { transform: "translate(0px, 0px) scale(1)" },
+                            "33%": { transform: "translate(30px, -50px) scale(1.1)" },
+                            "66%": { transform: "translate(-20px, 20px) scale(0.9)" },
+                            "100%": { transform: "translate(0px, 0px) scale(1)" },
+                        },
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        
+        /* Glassmorphism Utilities */
+        .glass {
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+        }
+        
+        .glass-dark {
+            background: rgba(17, 24, 39, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        /* Subtle grid pattern for technical feel */
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Light Maintenance",
+      "operatingSystem": "WordPress",
+      "applicationCategory": "UtilitiesApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "A simple, lightweight maintenance mode plugin for WordPress."
+    }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased overflow-x-hidden relative">
+
+    <nav class="fixed w-full z-50 glass transition-all duration-300 top-0 left-0 border-b border-white/40" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-brand-900 tracking-tighter flex items-center gap-2">
+                <svg class="w-8 h-8 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                Light<span class="text-brand-600">Maintenance</span>.
+            </a>
+            <div class="hidden md:flex space-x-8 text-sm font-semibold text-gray-600 items-center">
+                <a href="#performance" class="hover:text-brand-600 transition">Performance</a>
+                <a href="#seo" class="hover:text-brand-600 transition">SEO</a>
+                <a href="#faq" class="hover:text-brand-600 transition">FAQ</a>
+                <!-- <a href="https://sakibmdnazmush-shop.fourthwall.com/" target="_blank" class="text-pink-600 hover:text-pink-700 flex items-center gap-1 font-bold bg-pink-50 px-3 py-1 rounded-full border border-pink-100 hover:bg-pink-100 transition">
+                    <span>♥</span> Donate
+                </a> -->
+            </div>
+            <a href="https://wordpress.org/plugins/sakibsnaz-light-maintenance-mode/" class="bg-brand-600 hover:bg-brand-800 text-white px-5 py-2.5 rounded-lg font-medium transition shadow-lg shadow-brand-600/20">
+                Get Plugin
+            </a>
+        </div>
+    </nav>
+
+    <header class="relative min-h-screen flex items-center pt-20 overflow-hidden bg-grid">
+        
+        <div class="absolute top-0 -left-4 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-2xl opacity-70 animate-blob"></div>
+        <div class="absolute top-0 -right-4 w-72 h-72 bg-yellow-300 rounded-full mix-blend-multiply filter blur-2xl opacity-70 animate-blob animation-delay-2000"></div>
+        <div class="absolute bottom-0 left-1/3 w-96 h-96 bg-pink-300 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-4000"></div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="w-full lg:w-1/2 text-center lg:text-left">
+                     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-50 text-orange-600 border border-orange-100 text-xs font-bold uppercase tracking-wide mb-6">
+                        <span class="w-2 h-2 rounded-full bg-orange-500 animate-pulse"></span> v1.0 Released
+                    </div>
+                    <h1 class="text-5xl lg:text-7xl font-extrabold text-gray-900 leading-tight mb-6 tracking-tight">
+                        Maintenance Mode <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-blue-400">Without the Bloat.</span>
+                    </h1>
+                    <p class="text-xl text-gray-600 mb-8 leading-relaxed max-w-lg mx-auto lg:mx-0 font-light">
+                        Stop slowing down your server just to say "We'll be right back." The lightweight solution for speed-obsessed developers.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="https://wordpress.org/plugins/sakibsnaz-light-maintenance-mode/" class="flex items-center justify-center gap-2 bg-brand-600 text-white font-bold text-lg px-8 py-4 rounded-xl shadow-xl shadow-brand-600/30 hover:bg-brand-800 hover:-translate-y-1 transition transform duration-200 ring-4 ring-brand-600/20">
+                            Download Now
+                        </a>
+                        <a href="#performance" class="glass text-gray-700 font-bold text-lg px-8 py-4 rounded-xl hover:bg-white/80 transition flex items-center justify-center">
+                            See Features
+                        </a>
+                    </div>
+                    <div class="mt-8 flex items-center justify-center lg:justify-start gap-4 text-sm text-gray-500 font-medium">
+                        <span class="flex items-center"><svg class="w-4 h-4 text-green-500 mr-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg> 100% Free</span>
+                        <a href="https://sakibmdnazmush-shop.fourthwall.com/" target="_blank" class="flex items-center hover:text-pink-600 transition group"><span class="text-pink-500 mr-1 group-hover:scale-125 transition-transform">♥</span> Support on Fourthwall</a>
+                    </div>
+                </div>
+
+                <div class="w-full lg:w-1/2 relative perspective-1000">
+                    <div class="relative glass rounded-2xl p-6 transform rotate-y-12 rotate-2 hover:rotate-0 transition duration-700 ease-out">
+                        <div class="flex items-center gap-2 mb-4">
+                            <div class="w-3 h-3 rounded-full bg-red-400"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-400"></div>
+                            <div class="ml-4 bg-gray-100/50 rounded px-3 py-1 text-xs text-gray-500 font-mono w-full border border-white/30 text-center">your-website.com</div>
+                        </div>
+                        <div class="bg-white/40 backdrop-blur-sm border border-white/50 rounded-lg h-64 flex flex-col items-center justify-center text-center p-8">
+                            <div class="w-20 h-20 bg-gradient-to-br from-brand-100 to-purple-100 rounded-full mb-4 flex items-center justify-center text-4xl shadow-inner">🚧</div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-2">Site Maintenance</h3>
+                            <p class="text-gray-600 text-sm">We are performing some scheduled maintenance. We will be back online shortly.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="absolute -top-10 -right-10 w-64 h-64 bg-gradient-to-br from-blue-400 to-cyan-300 rounded-full mix-blend-multiply filter blur-3xl opacity-40 -z-10 animate-blob"></div>
+                    <div class="absolute -bottom-10 -left-10 w-64 h-64 bg-gradient-to-br from-purple-400 to-pink-300 rounded-full mix-blend-multiply filter blur-3xl opacity-40 -z-10 animate-blob animation-delay-2000"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+        </div>
+    </header>
+
+    <section id="performance" class="py-24 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-white to-brand-50/50 -z-20"></div>
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2">
+                    <div class="w-14 h-14 bg-white border border-blue-100 text-brand-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-blue-100/50">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h2 class="text-3xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight">Built for Speed. <br> Zero Database Bloat.</h2>
+                    <p class="text-lg text-gray-600 mb-6 font-light leading-relaxed">
+                        Many plugins load heavy CSS files, images, and tracking scripts just to show a "Coming Soon" page. 
+                    </p>
+                    <p class="text-lg text-gray-600 mb-8 font-light leading-relaxed">
+                        <strong>Light Maintenance</strong> is different. It uses native WordPress functionality and executes strictly only when active. No permanent database tables left behind.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-center text-gray-700 font-medium bg-white/50 p-3 rounded-lg border border-white/60">
+                            <span class="w-6 h-6 rounded-full bg-green-100 text-green-600 flex items-center justify-center mr-3 text-xs">✓</span>
+                            < 2KB Plugin Size
+                        </li>
+                        <li class="flex items-center text-gray-700 font-medium bg-white/50 p-3 rounded-lg border border-white/60">
+                             <span class="w-6 h-6 rounded-full bg-green-100 text-green-600 flex items-center justify-center mr-3 text-xs">✓</span>
+                            No jQuery Dependencies
+                        </li>
+                        <li class="flex items-center text-gray-700 font-medium bg-white/50 p-3 rounded-lg border border-white/60">
+                             <span class="w-6 h-6 rounded-full bg-green-100 text-green-600 flex items-center justify-center mr-3 text-xs">✓</span>
+                            Instant Load Time
+                        </li>
+                    </ul>
+                </div>
+                <div class="lg:w-1/2 w-full relative">
+                    <div class="absolute inset-0 bg-gradient-to-r from-green-200 to-teal-200 blur-3xl opacity-30 transform rotate-12"></div>
+                    
+                    <div class="glass p-8 rounded-3xl relative overflow-hidden transform hover:scale-[1.02] transition duration-500">
+                        <h3 class="font-bold text-gray-400 uppercase text-xs tracking-wider mb-4 border-b border-gray-200/50 pb-2">PageSpeed Insights Simulation</h3>
+                        <div class="flex items-center justify-between mb-8">
+                            <div>
+                                <div class="text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-emerald-600">100</div>
+                                <div class="text-sm text-gray-500 font-medium mt-1">Performance</div>
+                            </div>
+                            <div class="h-20 w-20 rounded-full border-[6px] border-green-500/20 border-t-green-500 flex items-center justify-center text-green-500 shadow-xl bg-white/50">
+                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            </div>
+                        </div>
+                        <div class="space-y-5">
+                            <div class="group">
+                                <div class="flex items-center justify-between text-sm mb-1">
+                                    <span class="text-gray-600">First Contentful Paint</span>
+                                    <span class="text-green-600 font-bold bg-green-50 px-2 rounded">0.4 s</span>
+                                </div>
+                                <div class="w-full bg-gray-200/50 rounded-full h-2 overflow-hidden">
+                                    <div class="bg-gradient-to-r from-green-400 to-green-600 h-2 rounded-full w-[10%] shadow-[0_0_10px_rgba(74,222,128,0.5)]"></div>
+                                </div>
+                            </div>
+                            <div class="group">
+                                <div class="flex items-center justify-between text-sm mb-1">
+                                    <span class="text-gray-600">Speed Index</span>
+                                    <span class="text-green-600 font-bold bg-green-50 px-2 rounded">0.5 s</span>
+                                </div>
+                                <div class="w-full bg-gray-200/50 rounded-full h-2 overflow-hidden">
+                                    <div class="bg-gradient-to-r from-green-400 to-green-600 h-2 rounded-full w-[12%] shadow-[0_0_10px_rgba(74,222,128,0.5)]"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="seo" class="py-24 bg-white relative">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col-reverse lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2 w-full relative">
+                    <div class="absolute inset-0 bg-brand-600 blur-[100px] opacity-10"></div>
+                    
+                    <div class="glass-dark rounded-xl p-6 font-mono text-sm leading-relaxed text-gray-300 relative overflow-hidden transform hover:-translate-y-2 transition duration-500">
+                        <div class="flex space-x-2 mb-6 border-b border-gray-700/50 pb-4">
+                            <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
+                            <span class="ml-4 text-xs text-gray-500">server_response.log</span>
+                        </div>
+                        <p class="mb-2"><span class="text-green-400 font-bold">GET</span> /index.php HTTP/1.1</p>
+                        <p class="mb-2"><span class="text-blue-400 font-bold">Host:</span> yourwebsite.com</p>
+                        <div class="my-6 p-4 bg-yellow-500/10 rounded border-l-4 border-yellow-500 backdrop-blur-sm">
+                            <p class="text-white font-bold tracking-wide"><span class="text-yellow-500">HTTP/1.1</span> 503 Service Unavailable</p>
+                            <p class="text-gray-400 mt-1">Retry-After: 3600</p>
+                        </div>
+                        <p class="text-gray-500 italic">// This signals Google: "We'll be back, don't de-index!"</p>
+                    </div>
+                </div>
+                <div class="lg:w-1/2">
+                    <div class="w-14 h-14 bg-purple-50 text-purple-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-purple-100">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    </div>
+                    <h2 class="text-3xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight">SEO Protection Standard.</h2>
+                    <p class="text-lg text-gray-600 mb-6 font-light">
+                        Putting a site under maintenance can ruin your Google rankings if done wrong. Returning a "200 OK" status while your site is empty tells Google your site is broken.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-8 font-light">
+                        <strong>Light Maintenance</strong> automatically serves a <code class="bg-gray-100 px-2 py-1 rounded text-red-600 font-bold border border-gray-200">503 Service Unavailable</code> status. This signals search engines that the downtime is temporary, preserving your hard-earned SEO ranking.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-grid relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-gray-50 to-white -z-20"></div>
+        
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                 <div class="lg:w-1/2">
+                    <div class="w-14 h-14 bg-white text-brand-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg border border-gray-100">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
+                    </div>
+                    <h2 class="text-3xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight">One Click. Done.</h2>
+                    <p class="text-lg text-gray-600 mb-6 font-light">
+                        No complex page builders. No "upsell" popups. Just a clean settings page where you can toggle the mode on or off.
+                    </p>
+                    <div class="glass p-6 rounded-xl">
+                        <h4 class="font-bold text-gray-800 mb-4">What you can customize:</h4>
+                        <ul class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                            <li class="flex items-center text-sm text-gray-600"><span class="w-2 h-2 bg-brand-500 rounded-full mr-3 shadow-[0_0_8px_rgba(2,132,199,0.8)]"></span> Headline Text</li>
+                            <li class="flex items-center text-sm text-gray-600"><span class="w-2 h-2 bg-brand-500 rounded-full mr-3 shadow-[0_0_8px_rgba(2,132,199,0.8)]"></span> Description Message</li>
+                            <li class="flex items-center text-sm text-gray-600"><span class="w-2 h-2 bg-brand-500 rounded-full mr-3 shadow-[0_0_8px_rgba(2,132,199,0.8)]"></span> Background Color</li>
+                            <li class="flex items-center text-sm text-gray-600"><span class="w-2 h-2 bg-brand-500 rounded-full mr-3 shadow-[0_0_8px_rgba(2,132,199,0.8)]"></span> Text Color</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 w-full relative">
+                    <div class="absolute inset-0 bg-brand-200 blur-3xl opacity-20 transform -rotate-6 scale-90"></div>
+
+                    <div class="glass rounded-xl overflow-hidden relative transform hover:scale-[1.01] transition duration-300">
+                        <div class="bg-white/50 border-b border-white/50 px-4 py-3 flex items-center justify-between backdrop-blur-md">
+                            <span class="font-bold text-gray-700">Light Maintenance Settings</span>
+                            <span class="text-xs text-gray-400 uppercase tracking-widest">WP Admin</span>
+                        </div>
+                        <div class="p-8 space-y-8">
+                            <div class="flex items-center justify-between group">
+                                <div>
+                                    <label class="font-bold text-gray-800 text-lg">Enable Maintenance Mode</label>
+                                    <p class="text-sm text-gray-500">Activate the splash screen for visitors.</p>
+                                </div>
+                                <div class="relative inline-block w-14 mr-2 align-middle select-none transition duration-200 ease-in">
+                                    <input type="checkbox" checked class="toggle-checkbox absolute block w-8 h-8 rounded-full bg-white border-4 appearance-none cursor-pointer border-brand-500 right-0 shadow-sm"/>
+                                    <label class="toggle-label block overflow-hidden h-8 rounded-full bg-brand-500 cursor-pointer opacity-80"></label>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-gray-700 mb-2">Heading</label>
+                                <div class="w-full bg-white/60 border border-gray-200 rounded-lg px-4 py-3 text-gray-800 text-sm shadow-inner backdrop-blur-sm">Site Maintenance</div>
+                            </div>
+                            <div>
+                                <button class="bg-gradient-to-r from-brand-600 to-brand-500 text-white px-6 py-3 rounded-lg text-sm font-bold shadow-lg shadow-brand-500/30 hover:shadow-brand-500/50 transition w-full sm:w-auto">Save Changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="py-24 bg-white">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 tracking-tight">Frequently Asked Questions</h2>
+                <p class="text-gray-500 mt-2">Everything you need to know about the plugin.</p>
+            </div>
+            
+            <div class="space-y-4">
+                <div class="border border-gray-100 rounded-2xl p-6 hover:border-brand-200 hover:shadow-lg hover:shadow-brand-100/50 transition cursor-default bg-gray-50/50">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Is this plugin really free?</h3>
+                    <p class="text-gray-600">Yes, 100% free and open source. If you find it useful, you can <a href="https://sakibmdnazmush-shop.fourthwall.com/" target="_blank" class="text-pink-600 font-semibold hover:underline">support the developer here</a>.</p>
+                </div>
+                
+                <div class="border border-gray-100 rounded-2xl p-6 hover:border-brand-200 hover:shadow-lg hover:shadow-brand-100/50 transition cursor-default bg-gray-50/50">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Will this affect my SEO?</h3>
+                    <p class="text-gray-600">No. In fact, it protects it. We send a 503 Service Unavailable HTTP header, which tells search bots to come back later rather than de-indexing your empty site.</p>
+                </div>
+
+                <div class="border border-gray-100 rounded-2xl p-6 hover:border-brand-200 hover:shadow-lg hover:shadow-brand-100/50 transition cursor-default bg-gray-50/50">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Does it work with Elementor/Divi/etc?</h3>
+                    <p class="text-gray-600">Yes! Since Light Maintenance operates at the server initiation level, it blocks access before your page builder even loads, saving server resources.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-brand-900 text-white text-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-brand-900 to-black"></div>
+        <div class="absolute top-0 left-0 w-full h-full opacity-30 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+        <div class="absolute -top-24 left-1/2 w-96 h-96 bg-brand-500 rounded-full mix-blend-screen filter blur-[100px] opacity-30 animate-pulse"></div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <h2 class="text-4xl md:text-6xl font-extrabold mb-8 tracking-tight text-white drop-shadow-lg">Ready to go Light?</h2>
+            <p class="text-xl text-brand-100 mb-12 max-w-2xl mx-auto font-light leading-relaxed">Join the smart developers who prefer speed over complexity. Lightweight, fast, and secure.</p>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-6">
+                <a href="https://wordpress.org/plugins/sakibsnaz-light-maintenance-mode/" class="inline-flex items-center justify-center bg-white text-brand-900 font-bold text-lg px-10 py-5 rounded-full hover:bg-gray-100 hover:scale-105 transition transform shadow-[0_0_20px_rgba(255,255,255,0.3)]">
+                    Download Plugin
+                </a>
+                <a href="https://sakibmdnazmush-shop.fourthwall.com/" target="_blank" class="inline-flex items-center justify-center glass-dark text-white font-bold text-lg px-10 py-5 rounded-full hover:bg-white/10 hover:scale-105 transition transform flex items-center justify-center gap-2 border border-white/20">
+                    <span class="text-pink-400">♥</span> Support Development
+                </a>
+            </div>
+
+            <p class="mt-10 text-sm text-brand-300 opacity-60">No credit card required for download. GPLv2 Licensed.</p>
+        </div>
+    </section>
+
+    <footer class="bg-gray-50 py-16 border-t border-gray-200">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-1">
+                    <a href="#" class="text-xl font-bold text-brand-900 tracking-tighter flex items-center gap-2">
+                        <svg class="w-6 h-6 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        Light<span class="text-brand-600">Maintenance</span>.
+                    </a>
+                    <p class="mt-6 text-gray-500 text-sm leading-relaxed">
+                        The lightweight solution for WordPress maintenance mode. Built with performance in mind.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gray-900 mb-6">Product</h4>
+                    <ul class="space-y-3 text-sm text-gray-500 font-medium">
+                        <li><a href="#performance" class="hover:text-brand-600 transition">Features</a></li>
+                        <li><a href="changelog.html" class="hover:text-brand-600 transition">Changelog</a></li>
+                        <li><a href="https://wordpress.org/plugins/sakibsnaz-light-maintenance-mode/" class="hover:text-brand-600 transition">Download</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gray-900 mb-6">Resources</h4>
+                    <ul class="space-y-3 text-sm text-gray-500 font-medium">
+                        <li><a href="#" class="hover:text-brand-600 transition">Documentation</a></li>
+                        <li><a href="https://sakibmdnazmush-shop.fourthwall.com/" target="_blank" class="hover:text-pink-600 text-pink-500 font-bold transition flex items-center gap-2">Support Development <span class="text-xs bg-pink-100 px-2 rounded-full">New</span></a></li>
+                        <li><a href="https://github.com/nazsakib" class="hover:text-brand-600 transition">GitHub</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gray-900 mb-6">Legal</h4>
+                    <ul class="space-y-3 text-sm text-gray-500 font-medium">
+                        <li><a href="privacy.html" class="hover:text-brand-600 transition">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="hover:text-brand-600 transition">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 pt-8 text-center text-sm text-gray-400">
+                &copy; 2026 Light Maintenance. Developed by Sakib.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
