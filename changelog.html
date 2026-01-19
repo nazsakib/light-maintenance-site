@@ -97,9 +97,10 @@
     >
         <nav
             class="fixed w-full z-50 glass transition-all duration-300 top-0 left-0 border-b border-white/40"
+            id="navbar"
         >
             <div
-                class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center"
+                class="max-w-7xl mx-auto px-4 md:px-6 py-4 flex justify-between items-center"
             >
                 <a
                     href="/"
@@ -120,17 +121,28 @@
                     </svg>
                     Light<span class="text-brand-600">Maintenance</span>.
                 </a>
+
                 <div
                     class="hidden md:flex space-x-8 text-sm font-semibold text-gray-600 items-center"
                 >
-                    <a href="/#features" class="hover:text-brand-600 transition"
-                        >Features</a
+                    <a
+                        href="/#performance"
+                        class="hover:text-brand-600 transition"
+                        >Performance</a
                     >
-                    <a href="#" class="text-brand-600 font-bold">Changelog</a>
-                    <!-- <a href="https://sakibmdnazmush-shop.fourthwall.com/" target="_blank" class="text-pink-600 hover:text-pink-700 flex items-center gap-1 font-bold bg-pink-50 px-3 py-1 rounded-full border border-pink-100 hover:bg-pink-100 transition">
-                    <span>♥</span> Donate
-                </a> -->
+                    <a href="/#seo" class="hover:text-brand-600 transition"
+                        >SEO</a
+                    >
+                    <a href="/#faq" class="hover:text-brand-600 transition"
+                        >FAQ</a
+                    >
+                    <a
+                        href="/changelog"
+                        class="hover:text-brand-600 transition text-brand-600 font-bold"
+                        >Changelog</a
+                    >
                 </div>
+
                 <a
                     href="https://wordpress.org/plugins/sakibsnaz-light-maintenance-mode/"
                     class="bg-brand-600 hover:bg-brand-800 text-white px-5 py-2.5 rounded-lg font-medium transition shadow-lg shadow-brand-600/20"
@@ -140,19 +152,22 @@
             </div>
         </nav>
 
-        <header class="relative pt-40 pb-20 bg-grid">
+        <header
+            class="relative pt-32 pb-16 md:pt-48 md:pb-24 overflow-hidden bg-grid"
+        >
             <div
                 class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-r from-brand-100 to-purple-100 rounded-[100%] mix-blend-multiply filter blur-3xl opacity-50 -z-10"
             ></div>
 
-            <div class="container mx-auto px-4 text-center z-10">
+            <div class="container mx-auto px-4 text-center relative z-10">
                 <div
                     class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/60 border border-brand-200 text-brand-600 text-xs font-bold uppercase tracking-wide mb-6 backdrop-blur-sm"
                 >
                     Updates & History
                 </div>
+
                 <h1
-                    class="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight mb-4"
+                    class="text-4xl md:text-6xl font-extrabold text-gray-900 tracking-tight mb-4"
                 >
                     Product
                     <span
@@ -160,14 +175,14 @@
                         >Changelog</span
                     >
                 </h1>
+
                 <p class="text-lg text-gray-600 max-w-2xl mx-auto font-light">
                     Track the evolution of Light Maintenance. We are constantly
                     improving speed, security, and simplicity.
                 </p>
             </div>
         </header>
-
-        <section class="flex-grow pb-32 relative">
+        <section class="flex-grow pt-8 pb-32 relative">
             <div class="container mx-auto px-4 max-w-4xl relative">
                 <div
                     class="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-brand-200 via-gray-200 to-transparent md:-translate-x-1/2"
