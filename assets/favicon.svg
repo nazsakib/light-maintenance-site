@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 64 64"
+     width="64"
+     height="64"
+     fill="none">
+
+  <!-- Light bulb -->
+  <path d="M32 6
+           C20 6 14 16 14 24
+           C14 32 20 36 22 40
+           H42
+           C44 36 50 32 50 24
+           C50 16 44 6 32 6Z"
+        fill="#FFC107"/>
+
+  <!-- Bulb base -->
+  <rect x="24" y="40" width="16" height="6" rx="2" fill="#555"/>
+  <rect x="26" y="46" width="12" height="4" rx="2" fill="#777"/>
+
+  <!-- Wrench (maintenance) -->
+  <path d="M41 18
+           A6 6 0 0 0 35 24
+           L26 33
+           A3 3 0 1 0 31 38
+           L40 29
+           A6 6 0 0 0 46 23
+           L42 25
+           L39 22
+           Z"
+        fill="#2C2C2C"/>
+
+</svg>
