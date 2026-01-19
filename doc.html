@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Documentation | Light Maintenance Plugin</title>
+        <meta
+            name="description"
+            content="Technical documentation for Light Maintenance. Learn how to install, configure, and optimize your WordPress maintenance mode."
+        />
+        <link rel="canonical" href="https://lightmaintenance.site/docs" />
+        
+        <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            brand: {
+                                50: "#f0f9ff",
+                                100: "#e0f2fe",
+                                600: "#0284c7",
+                                800: "#075985",
+                                900: "#0c4a6e",
+                            },
+                        },
+                        fontFamily: {
+                            sans: ["Inter", "sans-serif"],
+                            mono: ["Fira Code", "monospace"],
+                        }
+                    },
+                },
+            };
+        </script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code&display=swap" rel="stylesheet" />
+
+        <style>
+            body { font-family: "Inter", sans-serif; }
+            .glass {
+                background: rgba(255, 255, 255, 0.65);
+                backdrop-filter: blur(12px);
+                border: 1px solid rgba(255, 255, 255, 0.5);
+            }
+            .bg-grid {
+                background-size: 40px 40px;
+                background-image:
+                    linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+            }
+            /* Hide scrollbar for sidebar while keeping functionality */
+            .no-scrollbar::-webkit-scrollbar { display: none; }
+            .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        </style>
+    </head>
+    <body class="bg-gray-50 text-gray-800 antialiased min-h-screen flex flex-col overflow-x-hidden">
+        
+        <nav class="fixed w-full z-50 glass border-b border-white/40" id="navbar">
+            <div class="max-w-7xl mx-auto px-4 md:px-6 py-4 flex justify-between items-center overflow-hidden">
+                <a href="/" class="text-xl md:text-2xl font-bold text-brand-900 tracking-tighter flex items-center gap-2 flex-shrink-0">
+                    <svg class="w-7 h-7 md:w-8 md:h-8 text-brand-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                    </svg>
+                    <span class="truncate">Light<span class="text-brand-600">Maintenance</span>.</span>
+                </a>
+
+                <div class="hidden md:flex space-x-8 text-sm font-semibold text-gray-600 items-center">
+                    <a href="/#performance" class="hover:text-brand-600 transition">Performance</a>
+                    <a href="/docs" class="text-brand-600 font-bold">Docs</a>
+                    <a href="/changelog" class="hover:text-brand-600 transition">Changelog</a>
+                </div>
+
+                <a href="https://wordpress.org/plugins/sakibsnaz-light-maintenance-mode/"
+                   class="flex-shrink-0 bg-brand-600 hover:bg-brand-800 text-white px-4 md:px-5 py-2 md:py-2.5 rounded-lg text-sm font-medium transition shadow-lg shadow-brand-600/20 whitespace-nowrap ml-4">
+                    Get Plugin
+                </a>
+            </div>
+        </nav>
+
+        <header class="relative pt-32 pb-12 md:pt-48 md:pb-16 overflow-hidden bg-grid">
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-r from-blue-50 to-indigo-100 rounded-[100%] mix-blend-multiply filter blur-3xl opacity-50 -z-10"></div>
+            <div class="container mx-auto px-4 text-center relative z-10">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-50 text-brand-600 border border-brand-100 text-xs font-bold uppercase tracking-wide mb-6 backdrop-blur-sm">
+                    Developer Guide
+                </div>
+                <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 tracking-tight mb-4">Documentation</h1>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto font-light leading-relaxed">
+                    Everything you need to set up and customize your maintenance mode in seconds.
+                </p>
+            </div>
+        </header>
+
+        <main class="flex-grow pt-16 pb-32">
+            <div class="container mx-auto px-4 max-w-5xl">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                    
+                    <aside class="hidden md:block col-span-1 sticky top-32 h-fit">
+                        <h4 class="font-bold text-gray-900 uppercase text-xs tracking-widest mb-4 px-4">Getting Started</h4>
+                        <ul class="space-y-1 text-sm border-l border-gray-200" id="sidebar-nav">
+                            <li><a href="#installation" class="block py-2 px-4 transition-all duration-200 text-gray-500 hover:text-brand-600">Installation</a></li>
+                            <li><a href="#activation" class="block py-2 px-4 transition-all duration-200 text-gray-500 hover:text-brand-600">Activation</a></li>
+                            <li><a href="#customization" class="block py-2 px-4 transition-all duration-200 text-gray-500 hover:text-brand-600">Customization</a></li>
+                            <li><a href="#technical" class="block py-2 px-4 transition-all duration-200 text-gray-500 hover:text-brand-600">Technical Details</a></li>
+                        </ul>
+                    </aside>
+
+                    <article class="col-span-1 md:col-span-3 prose prose-slate max-w-none">
+                        
+                        <section id="installation" class="mb-20 scroll-mt-32">
+                            <h2 class="text-3xl font-bold text-gray-900 mb-8">Installation</h2>
+                            
+                            <div class="space-y-12">
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center gap-3">
+                                        <span class="w-8 h-8 rounded-lg bg-brand-600 text-white flex items-center justify-center text-sm font-bold shadow-lg shadow-brand-600/20">01</span>
+                                        Via WordPress Dashboard
+                                    </h3>
+                                    <ol class="space-y-3 text-gray-600 ml-11 list-decimal leading-relaxed">
+                                        <li>Log in to your WordPress <strong>WP Admin</strong> area.</li>
+                                        <li>Go to <strong>Plugins > Add New</strong>.</li>
+                                        <li>Search for <code class="text-brand-600 font-bold bg-brand-50 px-2 rounded">Sakibsnaz Light Maintenance Mode</code>.</li>
+                                        <li>Click <strong>Install Now</strong> and then <strong>Activate</strong>.</li>
+                                    </ol>
+                                </div>
+
+                                <section id="installation-manual" class="mb-20 scroll-mt-32">
+    <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center gap-3">
+        <span class="w-8 h-8 rounded-lg bg-brand-600 text-white flex items-center justify-center text-sm font-bold shadow-lg shadow-brand-600/20">02</span>
+        Manual Upload (FTP/Local)
+    </h3>
+    <p class="text-gray-600 mb-8 ml-11 leading-relaxed">Perfect for local development or manual server deployment. You can acquire the plugin files in two ways:</p>
+
+    <div class="ml-11 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+            <h4 class="font-bold text-brand-900 mb-4 flex items-center gap-2">
+                <svg class="w-5 h-5 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+                Via Official Website
+            </h4>
+            <ol class="space-y-3 text-sm text-gray-600 list-decimal pl-4 leading-relaxed">
+                <li>Visit <a href="https://www.lightmaintenance.site" class="text-brand-600 font-semibold underline">lightmaintenance.site</a>.</li>
+                <li>Click the <span class="bg-brand-600 text-white px-2 py-0.5 rounded text-[10px] font-bold uppercase whitespace-nowrap">Get Plugin</span> button in the top navigation.</li>
+                <li>Save the <code>.zip</code> file to your computer.</li>
+            </ol>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+            <h4 class="font-bold text-brand-900 mb-4 flex items-center gap-2">
+                <svg class="w-5 h-5 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                Via WordPress.org
+            </h4>
+            <ol class="space-y-3 text-sm text-gray-600 list-decimal pl-4 leading-relaxed">
+                <li>Go to the <a href="https://wordpress.org/plugins/sakibsnaz-light-maintenance-mode/" class="text-brand-600 font-semibold underline">Plugin Repository</a>.</li>
+                <li>Click the blue <strong>Download</strong> button.</li>
+                <li>Save the <code>.zip</code> file to your computer.</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="mt-8 ml-11 p-6 glass rounded-2xl border border-brand-100">
+        <h4 class="font-bold text-gray-800 mb-4 text-sm uppercase tracking-wider">Finalizing Installation</h4>
+        <ol class="space-y-3 text-gray-600 list-decimal pl-4 leading-relaxed">
+            <li>Extract the downloaded <code>sakibsnaz-light-maintenance-mode.zip</code> folder.</li>
+            <li>Use an FTP client or File Manager to navigate to your site's <code class="bg-gray-100 px-2 rounded text-brand-600">/wp-content/plugins/</code> directory.</li>
+            <li>Upload the unzipped folder into that directory.</li>
+            <li>Go to <strong>WP Admin > Plugins</strong> and click <strong>Activate</strong> on Light Maintenance.</li>
+        </ol>
+    </div>
+</section>
+
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center gap-3">
+                                        <span class="w-8 h-8 rounded-lg bg-brand-600 text-white flex items-center justify-center text-sm font-bold shadow-lg shadow-brand-600/20">03</span>
+                                        Via WP-CLI
+                                    </h3>
+                                    <div class="bg-slate-900 rounded-xl p-6 text-slate-300 font-mono text-sm ml-11 border border-slate-800 shadow-xl">
+                                        <p class="mb-2 text-slate-500"># Install and activate instantly</p>
+                                        <p class="flex items-center gap-2">
+                                            <span class="text-brand-400">$</span> 
+                                            wp plugin install sakibsnaz-light-maintenance-mode --activate
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section id="activation" class="mb-20 scroll-mt-32">
+                            <h2 class="text-3xl font-bold text-gray-900 mb-6">Activation</h2>
+                            <p class="text-gray-600 mb-6 leading-relaxed text-lg">Setting up is designed to be a one-click process. No onboarding wizards or popups.</p>
+                            <div class="glass p-8 rounded-2xl border-l-4 border-brand-600 mb-8">
+                                <ol class="space-y-4 text-gray-700">
+                                    <li>Navigate to <span class="font-bold">Settings &rarr; Maintenance Mode</span>.</li>
+                                    <li>Toggle the <span class="bg-brand-100 text-brand-600 px-2 py-1 rounded font-bold uppercase text-xs">Enable Maintenance Mode</span> checkbox.</li>
+                                    <li>Click <span class="font-bold underline">Save Changes</span>.</li>
+                                </ol>
+                            </div>
+                            <div class="bg-blue-50 text-blue-800 p-5 rounded-xl border border-blue-100 flex gap-4">
+                                <svg class="w-6 h-6 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                <p class="text-sm"><strong>Note:</strong> Logged-in administrators bypass the splash screen automatically. To see the maintenance page yourself, log out or view your site in an Incognito/Private window.</p>
+                            </div>
+                        </section>
+
+                        <section id="customization" class="mb-20 scroll-mt-32">
+                            <h2 class="text-3xl font-bold text-gray-900 mb-6">Customization</h2>
+                            <p class="text-gray-600 mb-8 leading-relaxed text-lg">We provide full control over the maintenance page without adding bloat to your database.</p>
+                            
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                                    <h4 class="font-bold text-gray-900 mb-2">Typography</h4>
+                                    <p class="text-sm text-gray-500 leading-relaxed">Customize the main Headline and the description message displayed to visitors.</p>
+                                </div>
+                                <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                                    <h4 class="font-bold text-gray-900 mb-2">Branding</h4>
+                                    <p class="text-sm text-gray-500 leading-relaxed">Match your site's brand by picking custom background and text colors via a native color picker.</p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section id="technical" class="mb-20 scroll-mt-32 border-t pt-16">
+                            <h2 class="text-3xl font-bold text-gray-900 mb-6">Technical Details (SEO Safe)</h2>
+                            <p class="text-gray-600 mb-6 leading-relaxed">For developers concerned about search rankings, Light Maintenance is the safest choice.</p>
+                            
+                            <div class="space-y-6">
+                                <div class="flex gap-4">
+                                    <div class="w-12 h-12 bg-green-50 text-green-600 rounded-xl flex items-center justify-center flex-shrink-0 font-bold">503</div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-900">Native 503 Headers</h4>
+                                        <p class="text-gray-600 text-sm">We automatically serve a <code>503 Service Unavailable</code> header. This prevents Google from de-indexing your site during maintenance.</p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-4">
+                                    <div class="w-12 h-12 bg-pink-50 text-pink-600 rounded-xl flex items-center justify-center flex-shrink-0 font-bold">JS</div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-900">No Scripts Loaded</h4>
+                                        <p class="text-gray-600 text-sm">The maintenance screen does not load external CSS, Google Fonts, or JavaScript libraries. It is pure, fast HTML.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                    </article>
+                </div>
+            </div>
+        </main>
+
+        <footer class="bg-gray-50 py-12 border-t border-gray-200 mt-auto">
+            <div class="container mx-auto px-4 text-center">
+                <a href="/" class="text-lg font-bold text-brand-900 tracking-tighter inline-block mb-4">
+                    Light<span class="text-brand-600">Maintenance</span>.
+                </a>
+                <p class="text-gray-400 text-sm">
+                    &copy; 2026 Light Maintenance. Developed by Sakib Snaz.
+                </p>
+            </div>
+        </footer>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const sections = document.querySelectorAll('section[id]');
+                const navLinks = document.querySelectorAll('#sidebar-nav li a');
+
+                const observerOptions = {
+                    root: null,
+                    rootMargin: '-30% 0px -60% 0px',
+                    threshold: 0
+                };
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const id = entry.target.getAttribute('id');
+                            
+                            // Reset all links
+                            navLinks.forEach(link => {
+                                link.classList.remove('text-brand-600', 'font-bold', 'border-l-2', 'border-brand-600', '-ml-[1px]', 'bg-brand-50/50');
+                                link.classList.add('text-gray-500');
+                            });
+
+                            // Highlight active link
+                            const activeLink = document.querySelector(`#sidebar-nav li a[href="#${id}"]`);
+                            if (activeLink) {
+                                activeLink.classList.add('text-brand-600', 'font-bold', 'border-l-2', 'border-brand-600', '-ml-[1px]', 'bg-brand-50/50');
+                                activeLink.classList.remove('text-gray-500');
+                            }
+                        }
+                    });
+                }, observerOptions);
+
+                sections.forEach(section => observer.observe(section));
+            });
+        </script>
+
+    </body>
+</html>
