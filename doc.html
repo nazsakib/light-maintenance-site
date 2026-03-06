@@ -379,38 +379,50 @@
 
                         <section id="activation" class="mb-20 scroll-mt-32">
                             <h2 class="text-3xl font-bold text-gray-900 mb-6">
-                                Activation
+                                Activation & Configuration
                             </h2>
                             <p class="text-gray-600 mb-6">
                                 Light Maintenance is designed to stay out of
-                                your way. Activation takes less than 10 seconds.
+                                your way. Activation and basic setup takes less than 10 seconds.
                             </p>
-                            <div
-                                class="glass p-8 rounded-2xl border-l-4 border-brand-600 mb-8"
-                            >
-                                <ul class="space-y-4 text-gray-700">
-                                    <li>
-                                        1. Navigate to
-                                        <span class="font-bold"
-                                            >Settings &rarr; Maintenance
-                                            Mode</span
-                                        >.
-                                    </li>
-                                    <li>
-                                        2. Check the
-                                        <span
-                                            class="bg-brand-100 text-brand-600 px-2 py-1 rounded font-bold uppercase text-xs"
-                                            >Enable Maintenance Mode</span
-                                        >
-                                        box.
-                                    </li>
-                                    <li>
-                                        3. Click
-                                        <span class="font-bold underline"
-                                            >Save Changes</span
-                                        >.
-                                    </li>
-                                </ul>
+                            
+                            <div class="space-y-8">
+                                <!-- Step 1: Basic Activation -->
+                                <div class="glass p-8 rounded-2xl border-l-4 border-brand-600">
+                                    <h3 class="text-lg font-bold text-brand-900 mb-4 flex items-center gap-2">
+                                        <span class="w-6 h-6 rounded-full bg-brand-600 text-white flex items-center justify-center text-xs">1</span>
+                                        Enable Maintenance Mode
+                                    </h3>
+                                    <ul class="space-y-3 text-gray-700 ml-8">
+                                        <li>Navigate to <span class="font-bold">Settings &rarr; Maintenance Mode</span>.</li>
+                                        <li>Check the <span class="bg-brand-100 text-brand-600 px-2 py-1 rounded font-bold uppercase text-[10px]">Enable Maintenance Mode</span> box.</li>
+                                        <li>Click <span class="font-bold underline">Save Changes</span>.</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Step 2: Dynamic Typography -->
+                                <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm border-l-4 border-green-500">
+                                    <h3 class="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2">
+                                        <span class="w-6 h-6 rounded-full bg-green-500 text-white flex items-center justify-center text-xs">2</span>
+                                        Customize Typography (v1.1.0+)
+                                    </h3>
+                                    <p class="text-sm text-gray-600 mb-4 ml-8">
+                                        You can now take control of your public message without touching any code:
+                                    </p>
+                                    <ul class="space-y-4 text-gray-700 ml-8">
+                                        <li class="flex gap-3">
+                                            <span class="text-green-500 font-bold">&bull;</span>
+                                            <span><strong>Custom Headline:</strong> Enter a brand-specific title in the "Custom Headline" field. Leaving this blank will default to "We'll Be Right Back!".</span>
+                                        </li>
+                                        <li class="flex gap-3">
+                                            <span class="text-green-500 font-bold">&bull;</span>
+                                            <span><strong>Maintenance Message:</strong> Provide detailed instructions or expected return times in the "Custom Message" textarea.</span>
+                                        </li>
+                                    </ul>
+                                    <div class="mt-6 ml-8 p-4 bg-gray-50 rounded-lg border border-gray-200 text-xs text-gray-500 italic">
+                                        Note: All text inputs are automatically sanitized for security and support basic plain-text formatting.
+                                    </div>
+                                </div>
                             </div>
                         </section>
 
